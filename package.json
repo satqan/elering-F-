@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "dotnet fable src/Client --noCache --sourceMaps --run vite build",
+    "start:client-only": "dotnet fable watch src/Client --sourceMaps",
+    "start:vite-only": "vite --clearScreen false",
+    "start:client": "dotnet fable watch src/Client --noCache --sourceMaps --run vite --clearScreen false",
+    "start:client-docker": "dotnet tool restore; dotnet fable clean -y; env DOTNET_USE_POLLING_FILE_WATCHER=true dotnet fable watch src/Client",
+    "start:dev": "dotnet tool restore; npm-run-all --parallel start:client start:server",
+    "start:server": "dotnet watch run --project ./src/Server/Server.fsproj"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "vite": "^4.2.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "name": "fable-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-responsive": "^9.0.0"
+  }
+}
