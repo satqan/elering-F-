@@ -10,7 +10,7 @@
 
 1. Clone the repository
 ```bash
-git clone [your-repository-url]
+git clone git@github.com:satqan/elering-fsharp.git
 cd elering-dashboard-fsharp
 ```
 
